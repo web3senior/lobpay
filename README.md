@@ -1,36 +1,51 @@
 # 🦞 LobPay
 
-Where clients are agents.
+Where the clients are agents.
+
+TODO: Adding an image/ hero image here
+
+BADGES here
 
 ---
 ## Table of Contents
 * [Open Agents Hackathon](#x402)
 * [Problem](#x402)
 * [Solution](#x402)
+* [Motiviation](#x402): link to X posts about buying car with agent and a burger from MCDonal and restrurant reservation tweet.
 * [Demo](#x402)
 * [Features](#x402)
 * [Vision](#x402)
-* [Userflow](#how-does-it-work)
+* [User Flow](#how-does-it-work)
+* [Supported Networks](#supported-networks)
+* [GIS](#supported-networks)
 * [Installation](#installation)
 * [Endpoints](#configuration-settings)
 * [Skill](#configuration-settings)
-* [AI](#configuration-settings)
+* [AI](#configuration-settings): for uiux, commenting, improving README, fixing bugs, guiding in proxy in Nextjs
 * [Team](#configuration-settings)
 * [Contributing](#configuration-settings)
 ---
 
 ## Open Agents Hackathon
+About the hackathon [^1].
 
 
-
-
-## The Gateway for Autonomous Commerce
+## 🦞 AI Agents
 
 **LobPay** (derived from the "Lobster" vibes of the OpenClaw protocol) is a high-performance, decentralized marketplace designed specifically for AI Agents. It serves as the "Amazon for Agents," providing the infrastructure for autonomous entities to provision, trade, and settle transactions using Web3 rails.
 
+## Problem
+-**Pain ass** Installing skills for every commerce for ppl will be annoying in the future, right now it's new and ppl installing it but in the future it will be difficult.
+-**Security** AI agents runs in a local machine and users install it ofthen in their own machine (like me xD) instead of buying a mac mini or dedicated server. 
+-**Develiping cost** mention about ecommerce websites: they should update their websites
+-**Supporting**
+
+## Solution
+All in one platform, install only one skill; connect to millions of merchants. This is the future.
+LobPay provides a global gateway for all merchants where clients are agents not humnas. Think of it like Amazoon but for agents.
 
 ## Vision
-
+I believe, very soon, users won't open browsers to expolorer websites or google it to find something and buy, they will ask their AI agents to do it; seamless, fast, secure. 
 In the era of agentic workflows, machines need a place to shop. LobPay provides a "Command Center" interface where:
 
 - **AI Agents** can authenticate via EIP-191 signatures and programmatically purchase goods.
@@ -61,7 +76,7 @@ Create a `.env.local` file in the root directory:
 
 ```env
 NEXT_PUBLIC_NAME="LobPay"
-NEXT_PUBLIC_BASE_URL="[https://lobpay.cash](https://lobpay.cash)"
+NEXT_PUBLIC_BASE_URL="[https://lobpay.vercel.app](https://lobpay.vercel.app)"
 DB_NAME="lobpay"
 JWT_SECRET="your_secret_here"
 ```
@@ -93,6 +108,10 @@ npm run dev
 
 https://documenter.getpostman.com/view/31287350/2sBXcEmMBD
 
+## Supported Networks
+- Base
+- LUKSO (Loading...)
+
 ## Skill
 
 [/skill.md](/skill.md)
@@ -107,6 +126,11 @@ https://documenter.getpostman.com/view/31287350/2sBXcEmMBD
 ## Team
 * [Amir Rahimi](./team/amir.md)
 
-## Contributing
+# Contributing
 
-[/CONTRIBUTING.md](/CONTRIBUTING.md)
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+
+
+## Refrences
+
+[^1]: [x402 Documentation](https://docs.x402.org/)
