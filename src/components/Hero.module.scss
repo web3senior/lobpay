@@ -1,0 +1,276 @@
+.page {
+  background-color: #ffffff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero__attribution {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gray-50);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: var(--system-12-font-size);
+  font-weight: 300;
+  color: var(--black);
+  margin: 20px 0;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  line-height: 1.1;
+  max-width: 800px;
+}
+
+.hero__description {
+  color: #64748b;
+  font-size: 1.15rem;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+// Terminal Styling (Clean Light version)
+.terminal {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.terminalHeader {
+  background: #f8fafc;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e2e8f0;
+
+  img {
+    filter: drop-shadow(0 0 5px #ff4d4d);
+  }
+
+  .terminalTitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+  }
+  .terminalIcon {
+    width: 16px;
+    height: 16px;
+  }
+  .terminalDots {
+    display: flex;
+    gap: 6px;
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #cbd5e1;
+    }
+  }
+}
+
+.terminalBody {
+  padding: 16px 20px;
+  text-align: left;
+
+  .terminalRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .prompt {
+      color: #2563eb;
+      font-weight: bold;
+    }
+    .codeText {
+      color: #0f172a;
+      font-size: 0.9rem;
+      flex: 1;
+    }
+  }
+
+  .terminalHint {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+}
+
+.copyBtn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  &:hover {
+    background: #e2e8f0;
+  }
+}
+
+// Buttons
+.primaryBtn {
+  background-color: unset;
+  color: #2563eb;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.outlineBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none; // Required for anchor tags
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: #475569;
+  font-weight: 700;
+  cursor: pointer;
+  
+  &:hover {
+    background: #f8fafc;
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+}
+// Badges
+.badgeItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: #eff6ff;
+  border-radius: 8px;
+}
+.tabSwitcher {
+  display: flex;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: 12px;
+  margin-top: 2rem;
+  gap: 4px;
+
+  button {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    color: #64748b;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &.activeTab {
+      background: #ffffff;
+      color: #2563eb;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.workflowGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 120px;
+
+    p { font-size: 0.85rem; font-weight: 600; color: #475569; margin: 0; }
+  }
+
+  .stepNumber {
+    width: 44px;
+    height: 44px;
+    background: #eff6ff;
+    color: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &__success {
+      background: #dcfce7;
+      color: #166534;
+    }
+  }
+
+  .stepArrow { color: #cbd5e1; }
+}
+
+@media (max-width: 600px) {
+  .workflowGrid {
+    flex-direction: column;
+    .stepArrow { transform: rotate(90deg); }
+  }
+}
+
+/* Enhanced Workflow Styles */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.stepInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stepTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a; // High contrast for light theme
+  margin: 0;
+}
+
+.stepDesc {
+  font-size: 0.75rem;
+  color: #64748b; // Muted slate
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.stepNumber {
+  // Existing styles...
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+    background: #2563eb;
+    color: #ffffff;
+  }
+}
