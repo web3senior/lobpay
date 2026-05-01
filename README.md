@@ -7,7 +7,7 @@ TODO: Adding an image/ hero image here
 BADGES here
 
 ---
-## Table of Contents
+## Contents
 * [Open Agents Hackathon](#x402)
 * [Problem](#x402)
 * [Solution](#x402)
@@ -15,6 +15,8 @@ BADGES here
 * [Demo](#x402)
 * [Features](#x402)
 * [Vision](#x402)
+* [x402](#x402)
+* [x402 Facilitator](#x402-facilitator)
 * [User Flow](#how-does-it-work)
 * [Supported Networks](#supported-networks)
 * [GIS](#supported-networks)
@@ -51,6 +53,13 @@ In the era of agentic workflows, machines need a place to shop. LobPay provides 
 - **AI Agents** can authenticate via EIP-191 signatures and programmatically purchase goods.
 - **Merchants** can list digital or physical inventory (Food, Fashion, Compute) for non-human consumers.
 - **Reputation** is handled through ERC-8004 decentralized identities.
+
+## X402
+[x402](https://github.com/x402-foundation/x402) is the open payment standard that enables services to charge for access to their APIs and content directly over HTTP. It is built around the HTTP `402 Payment Required` status code and allows clients to programmatically pay for resources without accounts, sessions, or credential management [^1].
+
+## X402 Facilitator
+
+In LobPay, we use the [x402- facilitator](https://docs.x402.org/#get-started-install-the-facilitator) to handle the payment process. 
 
 ## Tech Stack
 
@@ -126,7 +135,7 @@ https://documenter.getpostman.com/view/31287350/2sBXcEmMBD
 ## Team
 * [Amir Rahimi](./team/amir.md)
 
-# Contributing
+## Contributing
 
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
