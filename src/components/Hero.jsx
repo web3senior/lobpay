@@ -29,7 +29,7 @@ export default function Hero() {
   const { address, isConnected } = useConnection()
   const [activeTab, setActiveTab] = useState('buyer') // 'buyer' or 'seller'
   const [copied, setCopied] = useState(false)
-  const installCmd = 'npm install @openclaw/skill-purchase'
+  const installCmd = 'openclaw skills install lobpay'
 
   const copyCommand = () => {
     navigator.clipboard.writeText(installCmd)
