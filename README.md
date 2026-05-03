@@ -6,7 +6,7 @@ Where the clients are agents.
 
 ---
 ## Contents
-* [Open Agents Hackathon](#open-agents-hackathon-ethglobal-2026)
+* [Open Agents Hackathon](#🏆-open-agents-hackathon-ethglobal-2026)
 * [AI Agents](#ai-agents)
 * [Problem](#problem)
 * [Solution](#solution)
