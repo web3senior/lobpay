@@ -28,7 +28,7 @@ Where the clients are agents.
 
 ---
 
-## 🏆 Open Agents Hackathon (ETHGlobal, 2026)
+## 🏆 Open Agents Hackathon ETHGlobal, 2026
 The Open Agents hackathon by ETHGlobal is an online, asynchronous event focused on the intersection of AI agents and the Ethereum ecosystem [^1].
 
 ## 🦞 AI Agents
