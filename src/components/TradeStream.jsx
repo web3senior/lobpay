@@ -17,7 +17,7 @@ const TradeStream = () => {
   const [hasMore, setHasMore] = useState(true)
 
   // Base Explorer URL constant
-  const BASE_EXPLORER_URL = 'https://basescan.org/tx'
+  const BASE_EXPLORER_URL = 'https://sepolia.basescan.org/tx'
 
   const fetchTransactions = useCallback(async () => {
     if (loading || !hasMore) return
