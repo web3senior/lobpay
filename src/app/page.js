@@ -1,66 +1,78 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
 
-export default function Home() {
+import { useEffect, useState } from 'react'
+import styles from './page.module.scss'
+import { MessageSquareMore, Radio, Settings, Users } from 'lucide-react'
+
+import ClientLayout from '@/components/ClientLayout'
+import clsx from 'clsx'
+import WagmiContext from '@/contexts/WagmiContext'
+import { ConnectWallet } from '@/components/ConnectWallet'
+import Reputation from '@/components/Reputation'
+import MapComponent from '@/components/Map'
+import TradeStream from '@/components/TradeStream'
+import Hero from '@/components/Hero'
+import Header from '@/components/Header'
+import AgentFeedback from '@/components/AgentFeedback'
+import Steps from '@/components/Steps'
+import WhyUs from '@/components/WhyUs'
+import Join from '@/components/Join'
+import MerchantLedger from '@/components/MerchantCarousel'
+import MerchantCarousel from '@/components/MerchantCarousel'
+
+export default function Page({ children }) {
+  const [isLoading, setIsLoading] = useState(true)
+  const [activeTab, setActiveTab] = useState('chat')
+
+  useEffect(() => {
+    // Hide splash screen once the app is mounted
+    // A 1000ms-2000ms delay is common to avoid "flicker"
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1500)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className={`${styles.page}`}>
+      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Hero />
+      <Steps />
+      <div className={clsx(styles.page__container, `__container`)} data-width={`xxlarge`}>
+        <section className={`${styles.page__heading} flex flex-column align-items-center pt-50`}>
+          <h1>See It In Action</h1>
+          <p>Real-time visibility into every AI-powered transaction.</p>
+        </section>
+
+        <div className={`${styles.page__grid} flex flex-wrap gap-1`} style={{ '--data-width': `500px` }}>
+          <div className="flex-1">
+            <MapComponent />
+          </div>
+          <div className="flex-1">
+            <TradeStream />
+          </div>
+
+          <div className={`flex-1 grid grid--fit gap-1`} style={{ '--data-width': `350px` }}>
+            <div className="flex-1 flex flex-column">
+              <Reputation />
+            </div>
+            <div className="flex-1 flex flex-column">
+              <AgentFeedback />
+            </div>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        <MerchantCarousel />
+
+        <WhyUs />
+        <Join />
+        <footer></footer>
+      </div>
+      {/* {activeTab === 'chat' && <Chat />}
+      {activeTab === 'communities' && <NoData name={`Communities`} />}
+      {activeTab === 'channels' && <NoData name={`Channels`} />}
+      {activeTab === 'settings' && <NoData name={`Settings`} />} */}
     </div>
-  );
+  )
 }

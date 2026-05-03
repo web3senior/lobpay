@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from 'next/font/google'
+import ClientLayout from '@/components/ClientLayout'
 import './../styles/Global.scss'
 import './globals.css'
 
