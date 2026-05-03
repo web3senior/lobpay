@@ -83,7 +83,7 @@ export const RevenueSwapper = ({ revenue }) => {
             {TOP_TOKENS.map(t => <option key={t.symbol} value={t.symbol}>Swap to {t.symbol}</option>)}
           </select>
           <button onClick={executeLiquidation} disabled={loading || !revenue} className={swapperStyles.liquidateButton}>
-            {loading ? 'PROCESSING...' : 'LIQUIDATE'}
+            {loading ? 'PROCESSING...' : '🦄 Swap'}
           </button>
         </div>
       </div>

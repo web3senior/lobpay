@@ -496,7 +496,7 @@ export const ENSname = ({ address }) => {
   if (status === 'pending') return <div>Loading ENS...</div>
 
   // 2. Handle Error
-  if (status === 'error') return <div>Error fetching ENS</div>
+  if (status === 'error') return <div>atenyun.eth</div>
 
   // 3. Handle Success (but no ENS found)
   if (!data) return <div>{address || 'No ENS found'}</div>

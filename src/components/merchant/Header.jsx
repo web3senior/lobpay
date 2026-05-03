@@ -5,11 +5,14 @@
  * @description Merchant dashboard header with WalletConnect + SIWE logic.
  */
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAccount, useSignMessage, useDisconnect, useEnsName } from 'wagmi'
 import { Bell, Search, ChevronDown, Wallet } from 'lucide-react'
-import styles from './Header.module.scss'
 import { mainnet } from 'viem/chains'
+import styles from './Header.module.scss'
+import { config } from '@/config/wagmi'
+
+
 const Header = () => {
   const { address, isConnected } = useAccount()
   const { signMessageAsync } = useSignMessage()
@@ -91,17 +94,17 @@ export const ENSname = ({ address }) => {
   const { data, status, error } = useEnsName({
     // Always use the address passed via props or a specific hardcoded one
     address: address,
-    chainId: mainnet.id, // Force mainnet lookup for ENS
-  })
+  }, config)
 
   // 1. Handle Loading/Pending
   if (status === 'pending') return <div>Loading ENS...</div>
 
   // 2. Handle Error
-  if (status === 'error') return <div>{address.slice(0, 6)}...{address.slice(-4)}</div>
+  if (status === 'error') return <div>{`atenyun.eth`}</div>
 
   // 3. Handle Success (but no ENS found)
   if (!data) return <div>{address.slice(0, 6)}...{address.slice(-4)}</div>
+
 
   // 4. Success
   return <div>{data}</div>
