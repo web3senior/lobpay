@@ -1,0 +1,69 @@
+/**
+ * @file Page.module.scss
+ */
+
+.dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+  .title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+  }
+  .subtitle {
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.statCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-mono, monospace);
+  }
+}
+
+.recentActivity {
+  background: #f8fafc;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px dashed #cbd5e1;
+  text-align: center;
+
+  h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+  }
+}

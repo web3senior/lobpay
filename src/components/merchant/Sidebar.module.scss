@@ -1,0 +1,84 @@
+/**
+ * @file components/dashboard/Sidebar.module.scss
+ */
+
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+
+  &__brand {
+    margin-bottom: 2.5rem;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.05em;
+  }
+
+  &__tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    background: #eff6ff;
+    color: #3b82f6;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  &__nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__footer {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+  }
+
+  &--active {
+    background: #eff6ff;
+    color: #3b82f6;
+  }
+}
+
+.logoutBtn {
+  @extend .navLink;
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #ef4444;
+
+  &:hover {
+    background: #fef2f2;
+    color: #dc2626;
+  }
+}

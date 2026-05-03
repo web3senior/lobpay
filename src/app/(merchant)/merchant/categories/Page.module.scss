@@ -1,0 +1,215 @@
+.container {
+  padding: 2rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: #1e293b;
+    }
+    p {
+      color: #64748b;
+      margin: 0.25rem 0 0;
+    }
+  }
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .iconBox {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  .cardContent {
+    h3 {
+      font-size: 1.1rem;
+      margin: 0 0 0.5rem;
+      color: #0f172a;
+    }
+    p {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+  }
+
+  .cardFooter {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+}
+
+.menuBtn,
+.deleteBtn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  &:hover {
+    color: #ef4444;
+  }
+}
+/* Modal Styles */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    h2 {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #64748b;
+    }
+  }
+}
+
+.formGroup {
+  margin-bottom: 1.25rem;
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #475569;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    &:focus {
+      outline: 2px solid #2563eb;
+      border-color: transparent;
+    }
+  }
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+}
+
+.submitBtn {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    background: #1d4ed8;
+  }
+}
+.iconBtn,
+.iconBtnDelete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  color: #64748b;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #f1f5f9;
+  }
+}
+
+.iconBtnDelete:hover {
+  color: #ef4444;
+  background: #fef2f2;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

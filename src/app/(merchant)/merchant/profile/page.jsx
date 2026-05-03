@@ -33,7 +33,7 @@ import MerchantLogo from '@/components/MerchantLogo'
 import { createPublicClient, http } from 'viem'
 import { mainnet } from 'viem/chains'
 import { normalize } from 'viem/ens'
-import { useEnsName } from 'wagmi'
+import { useEnsAddress, useEnsAvatar, useEnsName } from 'wagmi'
 export const publicClient = createPublicClient({
   chain: mainnet,
   transport: http(),
@@ -456,7 +456,7 @@ export default function MerchantProfilePage() {
                 </h4>
                 <div className={styles.field}>
                   <label>Web3 Wallet Address</label>
-                  <ENSname name={'atenyun.eth'} />
+                  <ENSname address= {formData.wallet_address} />
                   <input
                     required
                     type="text"
@@ -484,9 +484,23 @@ export default function MerchantProfilePage() {
   )
 }
 
-const ENSname = ({ name }) => {
-  const { data: ensName } = useEnsName({
-    address: name,
+
+export const ENSname = ({ address }) => {
+  const { data, status, error } = useEnsName({
+    // Always use the address passed via props or a specific hardcoded one
+    address: address,
+    chainId: mainnet.id, // Force mainnet lookup for ENS
   })
-  return <p>{ensName}</p>
+
+  // 1. Handle Loading/Pending
+  if (status === 'pending') return <div>Loading ENS...</div>
+
+  // 2. Handle Error
+  if (status === 'error') return <div>Error fetching ENS</div>
+
+  // 3. Handle Success (but no ENS found)
+  if (!data) return <div>{address || 'No ENS found'}</div>
+
+  // 4. Success
+  return <div>{data}</div>
 }

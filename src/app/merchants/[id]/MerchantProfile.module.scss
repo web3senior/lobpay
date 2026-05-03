@@ -1,0 +1,413 @@
+/**
+ * @file app/merchants/[id]/MerchantProfile.module.scss
+ * @description Complete Light Theme styles with professional slate/cyan palette.
+ */
+
+// --- Variables ---
+$bg-primary: #ffffff;
+$bg-secondary: #f8fafc;
+$text-main: #0f172a;
+$text-muted: #64748b;
+$accent-blue: #0ea5e9;
+$border-color: #e2e8f0;
+$shadow-sm:
+  0 1px 3px 0 rgba(0, 0, 0, 0.1),
+  0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+.container {
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: $bg-primary;
+  color: $text-main;
+  min-height: 100vh;
+}
+
+// --- Loading & Error States ---
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-family: 'Inter', sans-serif;
+  color: $accent-blue;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+// --- Header Section ---
+.profileHeader {
+  display: flex;
+  margin-bottom: 44px;
+  gap: 60px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.avatarContainer {
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid $border-color;
+    background: $bg-secondary;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.profileInfo {
+  flex: 1;
+
+  .topRow {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    .username {
+      font-size: 28px;
+      font-weight: 300;
+      color: $text-main;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .verifiedIcon {
+      color: $accent-blue;
+    }
+
+    .actionBtn {
+      background-color: $text-main;
+      color: white;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .statsRow {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+
+    .statItem {
+      font-size: 16px;
+      color: $text-muted;
+
+      b {
+        color: $text-main;
+      }
+    }
+  }
+
+  .bioSection {
+    .category {
+      color: $accent-blue;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #334155;
+      margin-bottom: 12px;
+      max-width: 500px;
+    }
+
+    .locationTag {
+      font-size: 13px;
+      color: $text-muted;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+}
+
+// --- SEARCH & FILTER CONTROLS (Requested) ---
+.controls {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  border-top: 1px solid $border-color;
+
+  .searchBar {
+    display: flex;
+    align-items: center;
+    background: $bg-secondary;
+    border: 1px solid $border-color;
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+
+    &:focus-within {
+      border-color: $accent-blue;
+      background: #fff;
+    }
+
+    svg {
+      color: $text-muted;
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      margin-left: 10px;
+      width: 100%;
+      outline: none;
+      font-size: 14px;
+      color: $text-main;
+
+      &::placeholder {
+        color: #94a3b8;
+      }
+    }
+  }
+
+  .filterBar {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 5px 2px;
+
+    // Hide scrollbar but keep functionality
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    .chip,
+    .activeChip {
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid $border-color;
+    }
+
+    .chip {
+      background: #fff;
+      color: $text-muted;
+
+      &:hover {
+        background: $bg-secondary;
+        border-color: #cbd5e1;
+        color: $text-main;
+      }
+    }
+
+    .activeChip {
+      background: $accent-blue;
+      color: #fff;
+      border-color: $accent-blue;
+      box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2);
+    }
+  }
+}
+
+// --- Grid Layout ---
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+.tile {
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .tileImage {
+    aspect-ratio: 1;
+    background: $bg-secondary;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tileOverlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+      display: flex;
+      justify-content: flex-end;
+
+      .tilePrice {
+        background: rgba(255, 255, 255, 0.9);
+        color: $text-main;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .tileMeta {
+    padding: 16px;
+
+    .tag {
+      font-size: 10px;
+      font-weight: 700;
+      color: $accent-blue;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    h4 {
+      margin: 6px 0 2px;
+      font-size: 16px;
+      color: $text-main;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .price {
+      display: block;
+      color: $accent-blue;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}
+
+.noResults {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  color: $text-muted;
+  background: $bg-secondary;
+  border: 1px dashed $border-color;
+  border-radius: 12px;
+  font-size: 14px;
+}
+/**
+ * @file MerchantProfile.module.scss
+ * @description Specific styles for the filter navigation section.
+ */
+
+.filterBar {
+  margin: 24px 0;
+  padding: 16px 0;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+
+  // Small header above the buttons
+  .filterHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  // Container for the filter buttons
+  .chipContainer {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+
+    // Hide scrollbar but keep functionality
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    // Standard Chip Style
+    .chip {
+      background-color: #ffffff;
+      color: #64748b;
+      border: 1px solid #e2e8f0;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #f8fafc;
+        border-color: #cbd5e1;
+        color: #0f172a;
+      }
+    }
+
+    // Active/Selected Chip Style
+    .activeChip {
+      background-color: #0ea5e9;
+      color: #ffffff;
+      border: 1px solid #0ea5e9;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+      transition: transform 0.1s ease;
+
+      &:active {
+        transform: scale(0.96);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+/**
+ * @file app/(merchant)/merchant/Layout.module.scss
+ */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc; // Soft light gray background
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.mainContent {
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/**
+ * @file app/(merchant)/merchant/Layout.module.scss
+ */
+
+.layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f8fafc; // Clean light background
+
+  &__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: #f8fafc;
+  }
+}

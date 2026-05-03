@@ -1,0 +1,142 @@
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  .itemRow {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #475569;
+  }
+}
+
+.deliveryCell {
+  max-width: 200px;
+  p {
+    font-size: 0.85rem;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  small {
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.25rem;
+  }
+}
+
+.digitalTag {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &.preparing {
+    background: #fff7ed;
+    color: #c2410c;
+  }
+  &.shipped {
+    background: #eff6ff;
+    color: #1d4ed8;
+  }
+  &.delivered {
+    background: #f0fdf4;
+    color: #15803d;
+  }
+}
+.miniProductImg {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  object-fit: cover;
+  background: #f1f5f9;
+}
+
+.hashLink {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+
+  code {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    background: #f8fafc;
+    padding: 0.1rem 0.3rem;
+  }
+
+  a {
+    color: #3b82f6;
+    &:hover {
+      color: #2563eb;
+    }
+  }
+}
+.statusSelect {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+
+  &.preparing {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  &.shipped {
+    background: #e0e7ff;
+    color: #3730a3;
+  }
+  &.delivered {
+    background: #d1fae5;
+    color: #065f46;
+  }
+  &.picked_up {
+    background: #f3f4f6;
+    color: #374151;
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.emptyState {
+  text-align: center;
+  padding: 4rem 0 !important;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.amountText {
+  strong {
+    font-size: 1rem;
+    color: #1e293b;
+  }
+  span {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+}
