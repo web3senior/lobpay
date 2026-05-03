@@ -21,6 +21,7 @@
 ---
 
 ## Open Agents Hackathon ETHGlobal
+
 The Open Agents hackathon by ETHGlobal is an online, asynchronous event focused on the intersection of AI agents and the Ethereum ecosystem [^1].
 
 ## 🏗️ The Project
@@ -28,15 +29,18 @@ The Open Agents hackathon by ETHGlobal is an online, asynchronous event focused 
 **LobPay** (derived from the "Lobster" vibes of the OpenClaw protocol) is a high-performance, decentralized marketplace designed specifically for AI Agents. It serves as the "Amazon for Agents," providing the infrastructure for autonomous entities to provision, trade, and settle transactions using Web3 rails.
 
 ### 🔴 Problem
+
 - **Friction in Skill Installation**: Installing separate skills for every individual merchant is a bottleneck that won't scale.
 - **Hosting Limitations**: Agents running on local hardware (like a Mac mini) lack the persistent infrastructure of traditional e-commerce.
 - **High Development Costs**: Modern websites are built for human eyes, requiring costly overhead to make them "agent-readable."
 
 ### 🟢 Solution
+
 An all-in-one platform: install a single skill and connect to millions of merchants. 
 LobPay provides a global gateway where the clients are agents, not humans. By providing a standardized API and payment layer, we enable machines to shop as efficiently as humans do today.
 
 ### 👁️ Vision
+
 In the era of agentic workflows, users won't browse; they will delegate. LobPay provides the "Command Center" where:
 - **AI Agents** authenticate via EIP-191 signatures.
 - **Merchants** list inventory specifically for non-human consumers.
@@ -62,14 +66,20 @@ In LobPay, we use the [x402 facilitator](https://docs.x402.org/#get-started-inst
 
 ## 🔗 Core Integrations
 
+### 💾 0G Storage
+In a significant architectural upgrade, I have replaced IPFS with 0G Storage to serve as the project's primary data persistence layer. While traditional e-commerce relies on centralized databases or slower peer-to-peer networks, LobPay utilizes 0G's high-speed, programmable DA layer to maintain all merchant products' assets/media files and metadata onchain.
+
+- **Immutable Product Catalog**: Merchant inventory, including product descriptions and pricing metadata, is stored on 0G, ensuring the "Source of Truth" for AI agents is decentralized and tamper-proof.
+
+- **Transaction Archives**: I archive immutable transaction metadata and agent interaction logs, eliminating the risks associated with centralized data silos.
+
+- **Performance**: By leveraging 0G instead of IPFS, we achieve the data availability required for high-frequency agentic trading without sacrificing decentralized integrity.
+
 ### 🦄 Uniswap Revenue Swapper
 Merchants can instantly liquidate their USDC earnings into assets like ETH or WBTC. We utilize **UniswapX** for Dutch Auction orders and **EIP-712 permit signatures**, allowing for gasless authorization and high-efficiency capital rotation.
 
 ### 🆔 ENS (Identity Track)
 Every merchant node is linked to an **ENS domain**. This replaces complex hex addresses with human-readable business identities, allowing agents to "search" for merchants by name and providing a transparent reputation layer.
-
-### 💾 0G Storage
-We utilize **0G's decentralized storage layer** to archive immutable transaction metadata. This ensures that merchant history and agent interaction logs are permanent and tamper-proof, eliminating reliance on centralized databases for audit trails.
 
 ## Database Architecture
 
