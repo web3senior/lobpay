@@ -1,0 +1,102 @@
+/* Nested under .page from your previous setup */
+.page {
+  // ... existing styles ...
+  background-color: var(--black-800);
+  color: var(--white);
+  padding: 4rem 1rem;
+  &__steps {
+    margin: 4rem 0;
+    padding: 0 1rem;
+  }
+
+  &__stepsHeader {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  &__stepsTitle {
+ color: var(--white);
+    font-size: clamp(1rem, 20vw, 3rem);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  &__stepsSubtitle {
+    color: var(--black-100);
+    font-size: 1.125rem;
+  }
+
+  &__stepsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    position: relative;
+  }
+}
+
+/* Block: .stepCard (nested under .page__stepsGrid) */
+.stepCard {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--gray-300);
+  }
+
+  &__number {
+    position: absolute;
+    top: -1rem;
+    left: 2rem;
+    background: var(--color-primary);
+    color: var(--white);
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 0 20px rgba(var(--color-primary), 0.1);
+  }
+
+  &__iconWrapper {
+    color: rgba(var(--color-primary), 0.5);
+    margin-bottom: 1.5rem;
+    background: var(--gray-50);
+    width: fit-content;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+  }
+
+  &__title {
+    color: var(--black);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    color: var(--black-500);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Decorative connector at the bottom of the card */
+  &__connector {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    opacity: 0.3;
+  }
+}

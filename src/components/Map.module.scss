@@ -1,0 +1,137 @@
+/**
+ * @file Map.module.scss
+ * @description BEM styles for the map component nested under .page.
+ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: var(--global-border-radius);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  height: 100%;
+  min-height: 50svh;
+
+  &__header {
+    border-bottom: 2px solid #e2e8f0;
+    padding: 1rem;
+  }
+
+  &__title {
+    color: #0f172a;
+    font-size: 1.75rem;
+    margin: 0;
+  }
+
+  &__subtitle {
+    color: #64748b;
+    margin: 0.5rem 0 0;
+  }
+
+  &__mapContainer {
+    width: 100%;
+    height: 100%; // Essential for map to render
+    overflow: hidden;
+    border: 1px solid #cbd5e1;
+  }
+
+  &__leaflet {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+/* Independent Block for the Popup content */
+.merchantPopup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 0.25rem;
+
+  &__name {
+    color: #1e293b;
+    font-size: 1rem;
+  }
+
+  &__type {
+    color: #3b82f6;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  &__city {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.85rem;
+  }
+}
+.merchantPopup {
+  padding: 0.25rem;
+  font-family: 'JetBrains Mono', monospace; // Matches the agentic feel
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    color: #000;
+    text-transform: uppercase;
+  }
+
+  &__type {
+    font-size: 0.75rem;
+    color: #666;
+    letter-spacing: 1px;
+  }
+
+  &__stats {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0;
+    border-top: 1px dashed #ddd;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+}
+
+/* X402 Protocol Badge */
+.x402Tag {
+  background: #000;
+  color: #00ff00; // Cyber green for protocol status
+  font-size: 0.6rem;
+  font-weight: 900;
+  padding: 2px 6px;
+  display: inline-block;
+  width: fit-content;
+  border-radius: 1px;
+  letter-spacing: 1.5px;
+}
+
+.popupLink {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 5px;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
