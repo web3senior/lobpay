@@ -6,10 +6,10 @@
  */
 
 import React, { useState } from 'react'
-import { useAccount, useSignMessage, useDisconnect } from 'wagmi'
+import { useAccount, useSignMessage, useDisconnect, useEnsName } from 'wagmi'
 import { Bell, Search, ChevronDown, Wallet } from 'lucide-react'
 import styles from './Header.module.scss'
-
+import { mainnet } from 'viem/chains'
 const Header = () => {
   const { address, isConnected } = useAccount()
   const { signMessageAsync } = useSignMessage()
@@ -70,7 +70,7 @@ const Header = () => {
           <div className={styles.profile}>
             <div className={styles.profile__info}>
               <span className={styles.profile__name}>
-                {address.slice(0, 6)}...{address.slice(-4)}
+               <ENSname address={address} />
               </span>
               <span className={styles.profile__status}>Node Active</span>
             </div>
@@ -87,5 +87,23 @@ const Header = () => {
     </header>
   )
 }
+export const ENSname = ({ address }) => {
+  const { data, status, error } = useEnsName({
+    // Always use the address passed via props or a specific hardcoded one
+    address: address,
+    chainId: mainnet.id, // Force mainnet lookup for ENS
+  })
 
+  // 1. Handle Loading/Pending
+  if (status === 'pending') return <div>Loading ENS...</div>
+
+  // 2. Handle Error
+  if (status === 'error') return <div>{address.slice(0, 6)}...{address.slice(-4)}</div>
+
+  // 3. Handle Success (but no ENS found)
+  if (!data) return <div>{address.slice(0, 6)}...{address.slice(-4)}</div>
+
+  // 4. Success
+  return <div>{data}</div>
+}
 export default Header
