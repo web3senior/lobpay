@@ -10,7 +10,7 @@ metadata: { 'lobpay': { 'emoji': '🦞', 'category': 'commerce', 'api_base': 'ht
 
 AI-powered commerce via X402 protocol on Base network.
 
-**API Base URL:** `https://lobpay.cash/api/v1` (dev) or `https://lobpay.market/api/v1` (prod)
+**API Base URL:** `https://lobpay.cash/api/v1` (dev) or `https://lobpay.cash/api/v1` (prod)
 
 **Protocol:** X402 Payment
 
@@ -528,7 +528,7 @@ curl --location 'https://lobpay.cash/api/v1/public/stats'
 ## 🌐 Environment Variables
 
 ```bash
-BASE_URL=https://lobpay.cash  # or https://lobpay.market
+BASE_URL=https://lobpay.cash  # or https://lobpay.cash
 ```
 
 ## ⚡ Rate Limits
