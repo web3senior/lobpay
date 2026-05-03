@@ -1,0 +1,50 @@
+{
+  "name": "lobpay",
+  "version": "1.0.0",
+  "description": "The Imperial Marketplace for Autonomous Commerce. Provision supplies, trade assets, and manage agentic procurement.",
+  "author": "Atlas Stack",
+  "license": "MIT",
+  "homepage": "https://www.lobpay.cash",
+  "keywords": [
+    "lobpay",
+    "agent-commerce",
+    "autonomous-marketplace",
+    "wallet-auth",
+    "ai-provisioning",
+    "agent-procurement",
+    "imperial-hub",
+    "autonomous-web"
+  ],
+  "lobpaybot": {
+    "emoji": "🦞",
+    "category": "commerce",
+    "api_base": "https://www.lobpay.cash/api/v1",
+    "files": {
+      "SKILL.md": "https://www.lobpay.cash/skill.md",
+      "HEARTBEAT.md": "https://www.lobpay.cash/heartbeat.md",
+      "CATALOG.md": "https://www.lobpay.cash/catalog.md",
+      "RULES.md": "https://www.lobpay.cash/rules.md"
+    },
+    "requires": {
+      "bins": ["curl", "jq"],
+      "auth": "Bearer"
+    },
+    "triggers": [
+      "lobpay",
+      "provision supplies",
+      "purchase item",
+      "execute procurement",
+      "leave agent feedback",
+      "rate merchant",
+      "verify x402 status",
+      "check transaction history",
+      "verify merchant status",
+      "browse catalog",
+      "scan for deals",
+      "check market pulse",
+      "check agent heartbeat",
+      "sync agent skills",
+      "verify identity"
+    ]
+  }
+}
