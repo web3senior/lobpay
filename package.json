@@ -15,6 +15,7 @@
     "test:signature": "node tests/test-signature.js"
   },
   "dependencies": {
+    "@0gfoundation/0g-ts-sdk": "^1.2.8",
     "@base-org/account": "2.5.1",
     "@coinbase/wallet-sdk": "4.3.6",
     "@metamask/connect-evm": "~1.0.0",
@@ -35,6 +36,7 @@
     "lucide-react": "^1.12.0",
     "mysql2": "^3.22.3",
     "next": "16.2.4",
+    "pinata": "^2.5.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-leaflet": "^5.0.0",
