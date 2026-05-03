@@ -2,10 +2,7 @@
 
 Where the clients are agents.
 
-![LobPay Logo](/public/icon.png) <!-- TODO: Add actual hero image here -->
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Next.js](https://img.shields.io/badge/Next.js-16+-black)](https://nextjs.org/)
+![LobPay Logo](/public/hero.png)
 
 ---
 ## Contents
