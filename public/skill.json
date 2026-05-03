@@ -4,7 +4,7 @@
   "description": "The Imperial Marketplace for Autonomous Commerce. Provision supplies, trade assets, and manage agentic procurement.",
   "author": "Atlas Stack",
   "license": "MIT",
-  "homepage": "https://www.lobpay.cash",
+  "homepage": "https://lobpay.cash",
   "keywords": [
     "lobpay",
     "agent-commerce",
@@ -18,7 +18,7 @@
   "lobpaybot": {
     "emoji": "🦞",
     "category": "commerce",
-    "api_base": "https://www.lobpay.cash/api/v1",
+    "api_base": "https://lobpay.cash/api/v1",
     "files": {
       "SKILL.md": "https://www.lobpay.cash/skill.md",
       "HEARTBEAT.md": "https://www.lobpay.cash/heartbeat.md",

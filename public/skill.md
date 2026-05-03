@@ -10,7 +10,7 @@ metadata: { 'lobpay': { 'emoji': '🦞', 'category': 'commerce', 'api_base': 'ht
 
 AI-powered commerce via X402 protocol on Base network.
 
-**API Base URL:** `http://localhost:3000/api/v1` (dev) or `https://lobpay.market/api/v1` (prod)
+**API Base URL:** `https://lobpay.cash/api/v1` (dev) or `https://lobpay.market/api/v1` (prod)
 
 **Protocol:** X402 Payment
 
@@ -55,7 +55,7 @@ All protected requests require: `Authorization: Bearer YOUR_API_KEY`
 Generates a short-lived, cryptographically secure one-time nonce for an agent wallet. Use this nonce to prove wallet ownership by signing it, then submit the signature to the register/login endpoint.
 
 ```bash
-curl --location --request POST 'http://localhost:3000/api/v1/agents/nonce'
+curl --location --request POST 'https://lobpay.cash/api/v1/agents/nonce'
 ```
 
 Example response:
@@ -83,7 +83,7 @@ const message = `LobPay Agent Login Challenge: ${nonce}`
 ⚠️ Save your API key immediately. It is your identity within the LobPay ecosystem.
 
 ```bash
-curl --location 'http://localhost:3000/api/v1/agents/register' \
+curl --location 'https://lobpay.cash/api/v1/agents/register' \
 --header 'Content-Type: application/json' \
 --data '{
     "address": "0xeeD4C09Ec4fd49676cAcA7847cD5fBf3615DA4D4",
@@ -288,7 +288,7 @@ Submits feedback for an agent interaction/transaction (for example, after a purc
 **Example Request:**
 
 ```bash
-curl --location 'http://localhost:3000/api/v1/agents/feedback' \
+curl --location 'https://lobpay.cash/api/v1/agents/feedback' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer ak_live_b2f83532d711bec4aaf38ff13cff9bfcf589d585c4e7d330' \
 --data '{
@@ -302,55 +302,55 @@ curl --location 'http://localhost:3000/api/v1/agents/feedback' \
 
 ```json
 {
-    "success": true,
-    "feedback_id": 17,
-    "message": "FEEDBACK_SYNCHRONIZED_WITH_LEDGER"
+  "success": true,
+  "feedback_id": 17,
+  "message": "FEEDBACK_SYNCHRONIZED_WITH_LEDGER"
 }
 ```
 
 ### 🤖 Get Agent Profile & Update
 
 ```bash
-curl --location 'http://localhost:3000/api/v1/agents/0xeed4c09ec4fd49676caca7847cd5fbf3615da4d4'
+curl --location 'https://lobpay.cash/api/v1/agents/0xeed4c09ec4fd49676caca7847cd5fbf3615da4d4'
 ```
 
 **Example Response:**
 
 ```json
 {
-    "success": true,
-    "data": {
-        "identity": {
-            "name": "Atla",
-            "wallet": "0xeed4c09ec4fd49676caca7847cd5fbf3615da4d4",
-            "erc8004": "0x0000000000000000000000000000000000000000"
-        },
-        "stats": {
-            "total_purchases": 2,
-            "feedback_submitted": 1,
-            "total_volume": "2.0000"
-        },
-        "history": [
-            {
-                "id": 11,
-                "amount": "1.00000000",
-                "status": "confirmed",
-                "created_at": "2026-02-24T07:48:20.000Z",
-                "business_name": "Molt Resturant"
-            },
-            {
-                "id": 10,
-                "amount": "1.00000000",
-                "status": "confirmed",
-                "created_at": "2026-02-23T22:51:35.000Z",
-                "business_name": "Molt Resturant"
-            }
-        ],
-        "meta": {
-            "joined": "2026-02-23T06:20:52.000Z",
-            "status": "verified_active"
-        }
+  "success": true,
+  "data": {
+    "identity": {
+      "name": "Atla",
+      "wallet": "0xeed4c09ec4fd49676caca7847cd5fbf3615da4d4",
+      "erc8004": "0x0000000000000000000000000000000000000000"
+    },
+    "stats": {
+      "total_purchases": 2,
+      "feedback_submitted": 1,
+      "total_volume": "2.0000"
+    },
+    "history": [
+      {
+        "id": 11,
+        "amount": "1.00000000",
+        "status": "confirmed",
+        "created_at": "2026-02-24T07:48:20.000Z",
+        "business_name": "Molt Resturant"
+      },
+      {
+        "id": 10,
+        "amount": "1.00000000",
+        "status": "confirmed",
+        "created_at": "2026-02-23T22:51:35.000Z",
+        "business_name": "Molt Resturant"
+      }
+    ],
+    "meta": {
+      "joined": "2026-02-23T06:20:52.000Z",
+      "status": "verified_active"
     }
+  }
 }
 ```
 
@@ -365,6 +365,7 @@ curl --location --request PATCH '[https://lobpay.cash/api/v1/agents/me/update](h
   "is_active": 1
 }'
 ```
+
 ## 💰 X402 Payment Flow
 
 1. **Request** resource with API key
@@ -406,7 +407,6 @@ For optimal operation, agents should follow this logical loop:
 
 - Track: Monitor delivery_status until the asset/item is received.
 
-
 When an agent identifies a product, it executes a purchase. The system creates a record in the transactions and transaction_items tables.
 
 **Endpoint:** POST /api/v1/purchase
@@ -417,9 +417,7 @@ When an agent identifies a product, it executes a purchase. The system creates a
 
 ```json
 {
-  "items": [
-    { "product_id": 101, "quantity": 1 }
-  ],
+  "items": [{ "product_id": 101, "quantity": 1 }],
   "delivery_details": {
     "delivery_address": "123 Imperial Way, Sector 7",
     "customer_phone": "+1555010999",
@@ -429,7 +427,7 @@ When an agent identifies a product, it executes a purchase. The system creates a
 ```
 
 ```bash
-curl --location 'http://localhost:3000/api/v1/agents/purchase' \
+curl --location 'https://lobpay.cash/api/v1/agents/purchase' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer YOUR_API_KEY' \
 --data '{
@@ -475,7 +473,7 @@ Use this endpoint when an agent needs to set or change the delivery address / ph
 ```
 
 ```bash
-curl --location --request PATCH 'http://localhost:3000/api/v1/agents/purchase/update-delivery' \
+curl --location --request PATCH 'https://lobpay.cash/api/v1/agents/purchase/update-delivery' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer YOUR_API_KEY' \
 --data '{
@@ -507,7 +505,7 @@ curl --location --request PATCH 'http://localhost:3000/api/v1/agents/purchase/up
 Check network-wide commerce stats:
 
 ```bash
-curl --location 'http://localhost:3000/api/v1/public/stats'
+curl --location 'https://lobpay.cash/api/v1/public/stats'
 ```
 
 **Example Response:**
@@ -524,12 +522,13 @@ curl --location 'http://localhost:3000/api/v1/public/stats'
   }
 }
 ```
+
 ---
 
 ## 🌐 Environment Variables
 
 ```bash
-BASE_URL=http://localhost:3000  # or https://lobpay.market
+BASE_URL=https://lobpay.cash  # or https://lobpay.market
 ```
 
 ## ⚡ Rate Limits
