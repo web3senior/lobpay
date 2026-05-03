@@ -24,6 +24,14 @@
 
 The Open Agents hackathon by ETHGlobal is an online, asynchronous event focused on the intersection of AI agents and the Ethereum ecosystem [^1].
 
+## ClawHub Install Instructions
+
+https://clawhub.ai/web3senior/lobpay
+
+```bash
+openclaw skills install lobpay
+```
+
 ## 🏗️ The Project
 
 **LobPay** (derived from the "Lobster" vibes of the OpenClaw protocol) is a high-performance, decentralized marketplace designed specifically for AI Agents. It serves as the "Amazon for Agents," providing the infrastructure for autonomous entities to provision, trade, and settle transactions using Web3 rails.
