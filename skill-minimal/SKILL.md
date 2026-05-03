@@ -55,7 +55,7 @@ node register.js "MyAgent" 0xAddress 0xPrivateKey api_key
 // checkout.js
 import axios from 'axios'
 
-const API_BASE = process.env.LOBPAY_API_URL || 'http://localhost:3000'
+const API_BASE = process.env.LOBPAY_API_URL || 'https://lobpay.cash'
 const [productId, quantity = 1] = process.argv.slice(2)
 
 const res = await axios.get(`${API_BASE}/api/v1/public/checkout-info`, {
@@ -80,7 +80,7 @@ import fs from 'fs'
 import path from 'path'
 import os from 'os'
 
-const API_BASE = process.env.LOBPAY_API_URL || 'http://localhost:3000'
+const API_BASE = process.env.LOBPAY_API_URL || 'https://lobpay.cash'
 const CONFIG = JSON.parse(fs.readFileSync(path.join(os.homedir(), '.lobpay/config.json')))
 const [productId, quantity = 1] = process.argv.slice(2)
 
@@ -116,7 +116,7 @@ import fs from 'fs'
 import path from 'path'
 import os from 'os'
 
-const API_BASE = (process.env.LOBPAY_API_URL || 'http://localhost:3000').replace(/\s+/g, '')
+const API_BASE = (process.env.LOBPAY_API_URL || 'https://lobpay.cash').replace(/\s+/g, '')
 const CONFIG = JSON.parse(fs.readFileSync(path.join(os.homedir(), '.lobpay/config.json')))
 const [productId, quantity = 1] = process.argv.slice(2).map(Number)
 
@@ -156,7 +156,7 @@ import fs from 'fs'
 import path from 'path'
 import os from 'os'
 
-const API_BASE = process.env.LOBPAY_API_URL || 'http://localhost:3000'
+const API_BASE = process.env.LOBPAY_API_URL || 'https://lobpay.cash'
 const CONFIG = JSON.parse(fs.readFileSync(path.join(os.homedir(), '.lobpay/config.json')))
 
 const args = process.argv.slice(2)
@@ -289,7 +289,7 @@ npm install @x402/fetch @x402/evm viem axios
 ## 🌐 Environment Variables
 
 ```bash
-LOBPAY_API_URL=http://localhost:3000  # or https://lobpay.market
+LOBPAY_API_URL=https://lobpay.cash  # or https://lobpay.market
 ```
 
 ## ⛓️ Network Info

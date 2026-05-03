@@ -18,7 +18,7 @@ npm install
 
 Set environment variables (optional):
 ```bash
-LOBPAY_API_URL=http://localhost:3000  # Default: https://lobpay.market
+LOBPAY_API_URL=https://lobpay.cash  # Default: https://lobpay.market
 ```
 
 ## 📋 Core Workflows
